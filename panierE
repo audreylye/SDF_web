@@ -1,0 +1,51 @@
+<?php
+
+class panier
+{
+		private $idClient;
+		private $idProduit;
+		private $idPanier;
+		private $total;
+        private $codePromo;
+        private $totalReduction;
+
+	
+	
+	function __construct($idClient,$idProduit,$total,$codePromo,$totalReduction)
+	{
+		$this->idClient=$idClient;
+		$this->idProduit=$idProduit;
+		$this->total=$total;
+        $this->codePromo=$codePromo;
+        $this->totalReduction=$totalReduction;
+	}
+
+    function getidClient(){
+    	return $this->idClient;}
+    function getidProduit(){
+        	return $this->idProduit;}
+    function getidPanier(){
+        	return $this->idPanier;	}
+    function gettotal(){
+        	return $this->total;}
+    function getcodePromo(){
+            return $this->codePromo;}
+    function gettotalReduction(){
+            return $this->totalReduction;}	
+
+    function setidClient($idClient){
+        	 $this->idClient=$idClient;}
+    function setidProduit($idProduit){
+        	 $this->idProduit=$idProduit;}
+    function setidPanier($idPanier){
+        	 $this->idPanier=$idPanier;	}
+    function settotal($total){
+        	 $this->total=$total;}
+    function setcodePromo($codePromo){
+             $this->codePromo=$codePromo;}	
+    function settotalReduction($totalReduction){
+         $this->totalReduction=$totalReduction;     
+    		
+    }
+}
+?>
