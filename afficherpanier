@@ -1,0 +1,50 @@
+<?PHP
+include_once "config.php";
+include_once "core/panierC.php";
+$panier1=new panierC();
+$listepanier=$panier1->afficherpanier();
+?>
+<div class="row">
+                    <!-- ============================================================== -->
+                    <!-- data table multiselects  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Liste des paniers</h5>
+                                <p>Ici vous avez la liste de tous les paniers validé à partir du site web front.</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example3" class="table table-striped table-bordered" style="width:100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Identifiant</th>
+                                                <th>Identifiant du client</th>
+                                                <th>Total</th>
+                                                <th>Code Promotionnel</th>
+                                                <th>Total Réduction</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?PHP
+foreach($listepanier as $row){
+    ?>
+                                        
+                                            <tr>
+                                                <td><?PHP echo $row['IdPanier']; ?></td>
+                                                <td><?PHP echo $row['IdClient']; ?></td>
+                                                <td><?PHP echo $row['Total']; ?></td>
+                                                <td><?PHP echo $row['CodePromo']; ?></td>
+                                                <td><?PHP echo $row['TotalReduction']; ?></td>
+                                                <td></td>
+                                            </tr>
+                                        <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
